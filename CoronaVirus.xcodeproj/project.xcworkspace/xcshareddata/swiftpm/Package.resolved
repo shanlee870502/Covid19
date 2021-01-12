@@ -1,0 +1,52 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "SwiftUICharts",
+        "repositoryURL": "https://github.com/AppPear/ChartView.git",
+        "state": {
+          "branch": null,
+          "revision": "4699847a9ac0c694666cea3acef133498952566e",
+          "version": "1.5.4"
+        }
+      },
+      {
+        "package": "PartialSheet",
+        "repositoryURL": "https://github.com/AndreaMiotto/PartialSheet.git",
+        "state": {
+          "branch": null,
+          "revision": "936465232b6399e402e79d5b031622af9a5e9960",
+          "version": "2.1.11"
+        }
+      },
+      {
+        "package": "ToastUI",
+        "repositoryURL": "https://github.com/quanshousio/ToastUI.git",
+        "state": {
+          "branch": null,
+          "revision": "61e8f93b6e67467c6dfd52308c0940d5b3ca87e9",
+          "version": "1.3.1"
+        }
+      },
+      {
+        "package": "URLImage",
+        "repositoryURL": "https://github.com/dmytro-anokhin/url-image.git",
+        "state": {
+          "branch": null,
+          "revision": "2f499e1b568b04ec0ad0a92179e3d7b44bd20676",
+          "version": "2.2.0"
+        }
+      },
+      {
+        "package": "WaterfallGrid",
+        "repositoryURL": "https://github.com/paololeonardi/WaterfallGrid.git",
+        "state": {
+          "branch": null,
+          "revision": "f4254179edd6679ff4033997ed1744a1e1d18b08",
+          "version": "1.0.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
