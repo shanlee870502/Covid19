@@ -11,6 +11,11 @@ import PartialSheet
 struct ContentView: View {
     var album = Album()
     @EnvironmentObject var partialSheetManager: PartialSheetManager
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \Item.imgName, ascending: true)],
+        animation: .default)
+    private var items: FetchedResults<Item>
+
     var body: some View {
         TabView{
             CountryView()
@@ -26,11 +31,11 @@ struct ContentView: View {
                 }
             AlbumView()
                 .environmentObject(album)
-                .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
                 .tabItem{
                     Image(systemName: "photo.fill")
                     Text("My Collection")
                 }
+
         }
     }
 }

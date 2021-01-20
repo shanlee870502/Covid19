@@ -17,8 +17,7 @@ struct CoronaVirusApp: App {
             ContentView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .environmentObject(sheetManager)
-//            CollectionView()
-//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                
         }
     }
 }

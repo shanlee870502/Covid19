@@ -23,6 +23,7 @@ struct CountryImageWallView: View {
     @State private var showingSuccessToast = false
     
     var body: some View {
+        
         ScrollView(showsIndicators: false) {
             WaterfallGrid(photos.indices, id: \.self) { index in
                 URLImage(url:photos[index].webformatURL,

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5913DCA025B81D8D007F89AA /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5913DC9F25B81D8D007F89AA /* MapView.swift */; };
 		596BB52025A843D20022EA81 /* CoronaVirusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596BB51F25A843D20022EA81 /* CoronaVirusApp.swift */; };
 		596BB52425A843D40022EA81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 596BB52325A843D40022EA81 /* Assets.xcassets */; };
 		596BB52725A843D40022EA81 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 596BB52625A843D40022EA81 /* Preview Assets.xcassets */; };
@@ -32,7 +33,6 @@
 		596BB5D325AD64230022EA81 /* WaterfallGrid in Frameworks */ = {isa = PBXBuildFile; productRef = 596BB5D225AD64230022EA81 /* WaterfallGrid */; };
 		596BB5D725AD96FA0022EA81 /* ToastUI in Frameworks */ = {isa = PBXBuildFile; productRef = 596BB5D625AD96FA0022EA81 /* ToastUI */; };
 		596BB60325ADA5F30022EA81 /* AlbumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596BB60225ADA5F30022EA81 /* AlbumView.swift */; };
-		596BB60625ADA70D0022EA81 /* trash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596BB60525ADA70D0022EA81 /* trash.swift */; };
 		596BB60925ADAA5F0022EA81 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596BB60825ADAA5F0022EA81 /* Album.swift */; };
 		596BB62F25ADB1730022EA81 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 596BB62E25ADB1730022EA81 /* WidgetKit.framework */; };
 		596BB63125ADB1730022EA81 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 596BB63025ADB1730022EA81 /* SwiftUI.framework */; };
@@ -68,6 +68,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5913DC9F25B81D8D007F89AA /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		596BB51C25A843D20022EA81 /* CoronaVirus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoronaVirus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		596BB51F25A843D20022EA81 /* CoronaVirusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronaVirusApp.swift; sourceTree = "<group>"; };
 		596BB52325A843D40022EA81 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -90,7 +91,6 @@
 		596BB58625A9F23F0022EA81 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		596BB5AB25AACE1A0022EA81 /* StatisticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticView.swift; sourceTree = "<group>"; };
 		596BB60225ADA5F30022EA81 /* AlbumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumView.swift; sourceTree = "<group>"; };
-		596BB60525ADA70D0022EA81 /* trash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = trash.swift; sourceTree = "<group>"; };
 		596BB60825ADAA5F0022EA81 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		596BB62C25ADB1720022EA81 /* CovidWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CovidWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		596BB62E25ADB1730022EA81 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -162,6 +162,7 @@
 				596BB60225ADA5F30022EA81 /* AlbumView.swift */,
 				596BB57425A98D450022EA81 /* SearchBar.swift */,
 				596BB58625A9F23F0022EA81 /* ContentView.swift */,
+				5913DC9F25B81D8D007F89AA /* MapView.swift */,
 				596BB58225A9E4210022EA81 /* NewsDetailView.swift */,
 				596BB5AB25AACE1A0022EA81 /* StatisticView.swift */,
 				596BB52325A843D40022EA81 /* Assets.xcassets */,
@@ -170,7 +171,6 @@
 				596BB52D25A843D40022EA81 /* Info.plist */,
 				596BB52A25A843D40022EA81 /* CoronaVirus.xcdatamodeld */,
 				596BB52525A843D40022EA81 /* Preview Content */,
-				596BB60525ADA70D0022EA81 /* trash.swift */,
 			);
 			path = CoronaVirus;
 			sourceTree = "<group>";
@@ -320,13 +320,13 @@
 				596BB52925A843D40022EA81 /* Persistence.swift in Sources */,
 				596BB54B25A85DC60022EA81 /* CountryView.swift in Sources */,
 				596BB63A25ADB1740022EA81 /* CovidWidget.intentdefinition in Sources */,
+				5913DCA025B81D8D007F89AA /* MapView.swift in Sources */,
 				596BB57E25A9DAC40022EA81 /* NewsView.swift in Sources */,
 				596BB55A25A8ABD10022EA81 /* CountryImageWallView.swift in Sources */,
 				596BB53A25A846CA0022EA81 /* APIManager.swift in Sources */,
 				596BB57B25A9DAAE0022EA81 /* NewsRow.swift in Sources */,
 				596BB5AC25AACE1D0022EA81 /* StatisticView.swift in Sources */,
 				596BB58725A9F23F0022EA81 /* ContentView.swift in Sources */,
-				596BB60625ADA70D0022EA81 /* trash.swift in Sources */,
 				596BB57525A98D450022EA81 /* SearchBar.swift in Sources */,
 				596BB52025A843D20022EA81 /* CoronaVirusApp.swift in Sources */,
 				596BB53D25A849330022EA81 /* Country.swift in Sources */,

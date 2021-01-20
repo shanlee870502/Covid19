@@ -13,15 +13,13 @@ struct AlbumView: View {
     @EnvironmentObject var album: Album
     var body : some View {
         VStack{
-            
-            List(album.name.indices, id:\.self){(index) in
+           List(album.name.indices, id:\.self){(index) in
                 Image(uiImage: getSavedImage(named: album.name[index])!)
                     .resizable()
                     .scaledToFit()
-            }
+           }
         }
     }
-    
 }
 
 func getSavedImage(named: String) -> UIImage? {
@@ -30,3 +28,5 @@ func getSavedImage(named: String) -> UIImage? {
     }
     return nil
 }
+
+

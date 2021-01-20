@@ -14,7 +14,8 @@ struct SearchView: View {
     @ObservedObject var apiManager = APIManager.shared
     @State private var searchText = ""
     @State private var selectCountry: String=""
-    
+    @State private var selectedIndex = 0
+//    let searchType = ["國家名稱","感染人數","死亡人數"]
     let names=["abc", "def", "ark"]
     var filterCountries:[Country] {
         return apiManager.allCountry.filter({searchText.isEmpty ? true : $0.country.contains(searchText)})
@@ -22,18 +23,12 @@ struct SearchView: View {
     var body: some View {
         List{
             SearchBar(text: $searchText)
-            //之後加上搜尋條件
-//            HStack{
-//                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-//                    Text("國家名稱")
-//                })
-//                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-//                    Text("感染人數")
-//                })
-//                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-//                    Text("死亡人數")
-//                })
+//            Picker(selection: $selectedIndex, label: Text("選擇角色")) {
+//                ForEach(searchType.indices) { (index) in
+//                    Text(searchType[index])
+//                }
 //            }
+            .pickerStyle(SegmentedPickerStyle())
             ForEach(filterCountries.indices, id:\.self) { (index) in
                 HStack{
                 Text(filterCountries[index].country)
@@ -60,8 +55,3 @@ struct SearchView: View {
     }
 }
 
-//struct CountrySearchView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CountrySearchView(showSearch:Binding<false>)
-//    }
-//}

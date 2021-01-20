@@ -13,36 +13,56 @@ struct CountryView: View {
     @ObservedObject var apiManager = APIManager.shared
     @EnvironmentObject var partialSheetManager: PartialSheetManager
     @State private var showSearch:Bool = false
-    
+    @State private var showMap: Bool = false
+
     var body: some View {
-//        ForEach(filterCountries.indices, id:\.self)
         NavigationView{
             ScrollView{
-            VStack{
-                
-                ForEach(apiManager.country.indices, id:\.self){(index) in
-                    NavigationLink(
-                        destination: CountryImageWallView(photos: apiManager.countryPhotos).environmentObject(album),
-                        label: {
-                            CountryRow(country: apiManager.country[index])
-                        })
-                        .navigationTitle("Country")
-                }
-                
-                Button(action: {
-                    self.showSearch = true
-                }, label: {
-                    Text("更換國家").foregroundColor(Color.white)
-                }).sheet(isPresented: $showSearch){
-                    VStack{
-                        SearchView(showSearch: $showSearch)
+                VStack{
+                    ForEach(apiManager.country.indices, id:\.self){(index) in
+                        NavigationLink(
+                            destination: CountryImageWallView(photos: apiManager.countryPhotos).environmentObject(album),
+                            label: {
+                                CountryRow(country: apiManager.country[index])
+                            })
+                            .navigationTitle("Country")
                     }
-                }.padding()
-                .background(Color.CountryBgColor)
-                .cornerRadius(15)
-                
-                StatisticView(cases:apiManager.cases, deathes: apiManager.deathes, recovered: apiManager.recovered)
-            }
+                    HStack{
+                        Button(action: {
+                            apiManager.updateSelectedCountry(country: apiManager.country[0].country)
+                        }, label: {
+                            Text("刷新").foregroundColor(Color.white)
+                        })
+                        .padding()
+                        .background(Color.CountryRowColor)
+                        .cornerRadius(15)
+                        Button(action: {
+                            self.showSearch = true
+                        }, label: {
+                            Text("更換國家").foregroundColor(Color.white)
+                        }).sheet(isPresented: $showSearch){
+                            VStack{
+                                SearchView(showSearch: $showSearch)
+                            }
+                        }.padding()
+                        .background(Color.CountryBgColor)
+                        .cornerRadius(15)
+                        
+                        Button(action: {
+                            self.showMap = true
+                        }, label: {
+                            Text("查看地圖").foregroundColor(Color.white)
+                        }).sheet(isPresented: $showMap){
+                            VStack{
+                                MapView(country: apiManager.country[0].country,lat: apiManager.country[0].countryInfo.lat, long: apiManager.country[0].countryInfo.long)
+                            }
+                        }.padding()
+                        .background(Color.CountryBgColor)
+                        .cornerRadius(15)
+                    }
+                    
+                    StatisticView(cases:apiManager.cases, deathes: apiManager.deathes, recovered: apiManager.recovered)
+                }
             }
         }
     }
@@ -55,25 +75,4 @@ struct SwiftUIView_Previews: PreviewProvider {
     }
 }
 
-//VStack{
-//    NavigationView {
-//        List(apiManager.country.indices, id:\.self, rowContent:{(index) in
-//            NavigationLink(
-//                destination: CountryDetailView(country: apiManager.country[index]),
-//                label: {
-//                    CountryRow(country: apiManager.country[index]).frame(width:350)
-//                })
-//                .navigationTitle("Country")
-//        })
-//    }
-//
-//    Button(action: {
-//        self.showSearch = true
-//    }, label: {
-//        Text("更換國家")
-//    }).sheet(isPresented: $showSearch){
-//        VStack{
-//            SearchView(showSearch: $showSearch)
-//        }
-//    }
-//}
+

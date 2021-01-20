@@ -42,9 +42,13 @@ struct SimpleEntry: TimelineEntry {
 
 struct CovidWidgetEntryView : View {
     var entry: Provider.Entry
-
+    
     var body: some View {
-        Text(entry.date, style: .time)
+        VStack{
+            Text("新增： +6").foregroundColor(.red)
+            Text("死亡： ＋0").foregroundColor(.blue)
+            Text("康復： +10").foregroundColor(.green)
+        }
     }
 }
 
